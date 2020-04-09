@@ -14,6 +14,8 @@ No changes to the Ethernet library have bene made.
 
 Refer module datasheet for details. 
 
+![Pinout](pinout.png)
+
 * Power pins: All GNDs to Bluepill's GNDs, all VIN3.3 pins to Bluepill's 3.3V 
 	* since the module is power-hungry, extra decoupling capacitors on the 3.3V rail are recommended
 * SPI: use default SPI1 (SCK = PA5, MISO = PA6, MOSI = PA7) and arbitrary chip select (here CS = PA4)
