@@ -40,7 +40,7 @@ Cache-Control: max-age=0
 client disconnected
 ```
 
-![[/webpage.png|Webpage in Firefox]]
+![Webpage in Firefox](webpage.png)
 
 # Technical Documents 
 
