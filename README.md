@@ -1,4 +1,4 @@
-# Bluepill + W5500 Ethernet Webserver using PlatformIO 
+# Bluepill + W5500 Ethernet MQTT Client using PlatformIO 
 
 # Description 
 
@@ -6,9 +6,9 @@ This project uses a "W5500 lite" board (also called DEVMO USR-ES1) connected to 
 
 ![W5500 Module](w5500_modules.png)
 
-The code is a slight extension of the original `WebServer.ino` (https://github.com/arduino-libraries/Ethernet/blob/master/examples/WebServer/WebServer.ino) sketch with the addition of reading out the supply voltage of the board. 
+The code is a slight extension of the original `ArduinoEthernetShield.ino` (https://github.com/256dpi/arduino-mqtt/blob/master/examples/ArduinoEthernetShield/ArduinoEthernetShield.ino) sketch with the addition of reading out the supply voltage of the board. 
 
-No changes to the Ethernet library have bene made.
+No changes to the Ethernet or arduino-mqtt library have been made.
 
 # Wireup
 
@@ -26,27 +26,27 @@ Refer module datasheet for details.
 
 The `Serial` UART output is on PA9 at 115200 baud. 
 
-The sketch should start with detecting the W5500 chip and getting an IP address via DHCP. If its HTTP website (port 80) is visited, the request is printed and some data is sent back.
+The sketch should start with detecting the W5500 chip and getting an IP address via DHCP. It then connects to a public MQTT broker, subscribes to the "/hello" topic and regularly publishes a dummy message in the topic.
 
 ```
-Ethernet WebServer Example
 W5500 detected
-server is at 192.168.1.237
-new client
-GET / HTTP/1.1
-Host: 192.168.1.237
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-Accept-Language: de,en-US;q=0.7,en;q=0.3
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Upgrade-Insecure-Requests: 1
-Cache-Control: max-age=0
-
-client disconnected
+Local IP is  192.168.1.237
+connecting...
+connected!
+Incoming: from topic "/hello" Payload "01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789"
+Incoming: from topic "/hello" Payload "world"
+Incoming: from topic "/hello" Payload "world"
+Incoming: from topic "/hello" Payload "world"
+Incoming: from topic "/hello" Payload "world"
+Publishing message to /hello: "world"
+Incoming: from topic "/hello" Payload "world"
+Incoming: from topic "/hello" Payload "world"
+Incoming: from topic "/hello" Payload "world"
+Incoming: from topic "/hello" Payload "world"
+Incoming: from topic "/hello" Payload "world"
+Incoming: from topic "/hello" Payload "world"
+Incoming: from topic "/hello" Payload "world"
 ```
-
-![Webpage in Firefox](webpage.png)
 
 # Technical Documents 
 
