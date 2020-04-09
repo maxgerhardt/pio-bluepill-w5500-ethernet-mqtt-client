@@ -4,7 +4,7 @@
 
 This project uses a "W5500 lite" board (also called DEVMO USR-ES1) connected to a standard BluePill board (STM32F103C8).
 
-[[/w5500_modules.png|W5500 Module]]
+![[/w5500_modules.png|W5500 Module]]
 
 # Wireup
 
@@ -40,7 +40,7 @@ Cache-Control: max-age=0
 client disconnected
 ```
 
-[[/webpage.png|Webpage in Firefox]]
+![[/webpage.png|Webpage in Firefox]]
 
 # Technical Documents 
 
