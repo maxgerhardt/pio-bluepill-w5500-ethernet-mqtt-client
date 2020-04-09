@@ -4,7 +4,7 @@
 
 This project uses a "W5500 lite" board (also called DEVMO USR-ES1) connected to a standard BluePill board (STM32F103C8).
 
-![W5500 Module])(/w5500_modules.png)
+![W5500 Module])(w5500_modules.png)
 
 The code is a slight extension of the original `WebServer.ino` (https://github.com/arduino-libraries/Ethernet/blob/master/examples/WebServer/WebServer.ino) sketch with the addition of reading out the supply voltage of the board. 
 
